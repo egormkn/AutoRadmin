@@ -4,7 +4,7 @@ AutoRadmin — cкрипт AutoIt для автоматизации подклю
 
 ## Использование
 
-1. Загрузите [последнюю версию AutoRadmin](https://github.com/egormkn/AutoRadmin/releases/download/latest/AutoRadmin.exe) и сохраните в любую удобную папку (например, на Рабочий стол).
+1. Загрузите [последнюю версию AutoRadmin](https://github.com/egormkn/AutoRadmin/releases/latest/download/AutoRadmin.exe) и сохраните в любую удобную папку (например, на Рабочий стол).
 2. Запустите AutoRadmin.exe. При первом запуске будет создан файл `config.ini`.
 3. Отредактируйте файл `config.ini`, указав аргументы запуска Radmin, имя пользователя и пароль для подключения.
 4. При следующем запуске AutoRadmin выполнит подключение в соответствии с заданными настройками.
