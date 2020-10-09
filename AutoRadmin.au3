@@ -3,8 +3,10 @@
 #AutoIt3Wrapper_Outfile=AutoRadmin.exe
 #AutoIt3Wrapper_Res_Comment=AutoIt script for Radmin connection
 #AutoIt3Wrapper_Res_Description=AutoIt script for Radmin connection
-#AutoIt3Wrapper_Res_Fileversion=3.5.2.1
+#AutoIt3Wrapper_Res_Fileversion=1.0.0.0
+#AutoIt3Wrapper_Res_Fileversion_AutoIncrement=p
 #AutoIt3Wrapper_Res_ProductName=AutoRadmin
+#AutoIt3Wrapper_Res_ProductVersion=3.5.2.1
 #AutoIt3Wrapper_Res_CompanyName=https://github.com/egormkn/AutoRadmin
 #AutoIt3Wrapper_Res_LegalCopyright=Egor Makarenko
 #AutoIt3Wrapper_Res_Field=AutoIt Version|%AutoItVer%
