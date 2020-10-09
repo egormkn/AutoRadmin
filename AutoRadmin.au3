@@ -21,9 +21,10 @@
 ;
 ; Configuration file: config.ini
 ; Default configuration:
-;   ARGS=/connect:desktop.example.com:1234 /through:server.example.com:5678 /fullstretch
-;   USER=Alice
+;   ARGS=/connect:desktop.example.com:4899 /through:server.example.com:4899 /fullstretch
+;   CONNECTUSER=Alice
 ;   CONNECTPASS=12345678
+;   THROUGHUSER=Bob
 ;   THROUGHPASS=87654321
 
 #include <AutoItConstants.au3>
@@ -41,7 +42,7 @@ AutoItSetOption("TrayAutoPause", 0)
 ; Set case-insensitive substring match for window titles
 AutoItSetOption("WinTitleMatchMode", -2)
 
-Global $ARGS, $USER, $THROUGHPASS, $CONNECTPASS
+Global $ARGS, $CONNECTUSER, $CONNECTPASS, $THROUGHUSER, $THROUGHPASS
 Local Const $dir = @TempDir & "\AutoRadmin"
 Local $overwrite = False
 
@@ -78,6 +79,7 @@ If Not FileExists("config.ini") Then
 		MsgBox(0, "Error", "Can't unpack file: " & @ScriptDir & "\config.ini")
 	Else
 		MsgBox(0, "Error", "Please setup the config file: " & @ScriptDir & "\config.ini")
+		Run("notepad.exe " & @ScriptDir & "\config.ini", @ScriptDir, @SW_SHOWNORMAL)
 	EndIf
 	Exit
 EndIf
@@ -119,7 +121,7 @@ If StringInStr($ARGS, "/through:") Then
 		MsgBox(0, "Error", "Timeout reached for connection through Radmin server: " & $command)
 		Exit
 	EndIf
-	ControlSend($hWnd, "", "[CLASS:Edit; INSTANCE:1]", $USER)
+	ControlSend($hWnd, "", "[CLASS:Edit; INSTANCE:1]", $THROUGHUSER)
 	ControlSend($hWnd, "", "[CLASS:Edit; INSTANCE:2]", $THROUGHPASS)
 	ControlClick($hWnd, "", "[CLASS:Button; INSTANCE:2]")
 	Sleep(1000)
@@ -131,7 +133,7 @@ If StringInStr($ARGS, "/connect:") Then
 		MsgBox(0, "Error", "Timeout reached for connection to Radmin server: " & $command)
 		Exit
 	EndIf
-	ControlSend($hWnd, "", "[CLASS:Edit; INSTANCE:1]", $USER)
+	ControlSend($hWnd, "", "[CLASS:Edit; INSTANCE:1]", $CONNECTUSER)
 	ControlSend($hWnd, "", "[CLASS:Edit; INSTANCE:2]", $CONNECTPASS)
 	ControlClick($hWnd, "", "[CLASS:Button; INSTANCE:2]")
 EndIf

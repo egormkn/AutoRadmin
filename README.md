@@ -12,8 +12,13 @@ AutoRadmin — cкрипт AutoIt для автоматизации подклю
 ### Конфигурация по умолчанию
 
 ```
-ARGS=/connect:desktop.example.com:1234 /through:server.example.com:5678 /fullstretch
-USER=Alice
+ARGS=/connect:desktop.example.com:4899 /through:server.example.com:4899 /fullstretch
+CONNECTUSER=Alice
 CONNECTPASS=12345678
+THROUGHUSER=Bob
 THROUGHPASS=87654321
 ```
+
+## Запуск Radmin в Linux
+
+AutoRadmin, как и сам Radmin Viewer, запускается и работает в Wine. Процесс запуска аналогичен инструкции для Windows.
